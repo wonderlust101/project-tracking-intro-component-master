@@ -41,7 +41,9 @@ export default function Header(): React.JSX.Element {
                             text={link.title}/>
                     ))}
 
-                    <div className="header__divider"></div>
+                    <li>
+                        <div className="header__divider"></div>
+                    </li>
 
                     <NavigationLink
                         href="/"
