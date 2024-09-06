@@ -1,0 +1,88 @@
+@use '../abstract' as a;
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+
+  @include a.breakpoint(medium) {
+    position: fixed;
+    padding: 4rem 10rem;
+    z-index: 1;
+  }
+
+  &__navigation {
+    position: absolute;
+    left: 50%;
+    top: 10rem;
+    width: 80%;
+    transform: translate(-50%);
+
+    @include a.breakpoint(medium) {
+      position: unset;
+      transform: unset;
+      width: unset;
+    }
+
+    &--is-open {
+      display: block;
+    }
+
+    &--is-closed {
+      display: none;
+
+      @include a.breakpoint(medium) {
+        display: block;
+      }
+    }
+  }
+
+  &__navigation-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: var(--clr-white);
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+
+    @include a.breakpoint(medium) {
+      padding: unset;
+      display: flex;
+      flex-direction: row;
+      position: unset;
+      background-color: unset;
+    }
+  }
+
+  &__hamburger {
+    @include a.breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &__divider {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: var(--clr-blue-500);
+    border-radius: 50rem;
+    opacity: 0.15;
+  }
+
+  &__navigation-link {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--clr-blue-500);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--login {
+      opacity: 0.5;
+    }
+  }
+}

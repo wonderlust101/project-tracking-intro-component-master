@@ -1,0 +1,12 @@
+@use '../abstract' as a;
+
+.landing-page {
+  display: grid;
+  height: 100%;
+  gap: 1.5rem;
+  min-height: 100vh;
+  
+  @include a.breakpoint(medium) {
+    align-content: center;
+  }
+}
